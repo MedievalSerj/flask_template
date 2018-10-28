@@ -9,4 +9,7 @@ if [ -z "$SKIP_PIP" ]; then
   pip install --user --no-cache-dir --requirement ./requirements.txt
 fi
 
+# run db migrations
+alembic upgrade head
+
 exec su-exec $worker_uid:$worker_gid "$@"
