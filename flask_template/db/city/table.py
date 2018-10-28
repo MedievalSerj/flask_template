@@ -8,5 +8,5 @@ city_table = sa.Table(
     metadata,
     sa.Column('id', UUID, primary_key=True,
               server_default=sa.text('uuid_generate_v1()')),
-    sa.Column('name', sa.String(64))
+    sa.Column('name', sa.String(64), unique=True)
 )
