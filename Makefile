@@ -1,6 +1,7 @@
 package = flask_template
 tests_dir = tests
 
+
 isort:
 	isort -rc $(package)
 	isort -rc $(tests_dir)
