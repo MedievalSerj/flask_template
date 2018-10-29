@@ -1,10 +1,10 @@
-from flask import jsonify, Blueprint, current_app
-from flask_template.services.v1 import city
-from flask_template.marshalling.v1.city.schema import CitySchema
+from flask import Blueprint, current_app, jsonify
 from webargs.flaskparser import use_kwargs
-from flask_template.services.exceptions import RecordExistsException
 from werkzeug.exceptions import Conflict
 
+from flask_template.marshalling.v1.city.schema import CitySchema
+from flask_template.services.exceptions import RecordExistsException
+from flask_template.services.v1 import city
 
 city_blueprint = Blueprint('public_city_api', __name__, url_prefix='/v1')
 

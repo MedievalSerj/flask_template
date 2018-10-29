@@ -1,11 +1,16 @@
 from __future__ import with_statement
+
+import os
+import sys
+from logging.config import fileConfig
+from os import getenv
+
 from alembic import context
 from sqlalchemy import create_engine
-from logging.config import fileConfig
-import sys
-import os
-from os import getenv
 from sqlalchemy.engine.url import URL
+
+from flask_template.db import tables  # flake8: noqa
+from flask_template.db.basic import metadata  # flake8: noqa
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -21,8 +26,6 @@ fileConfig(config.config_file_name)
 # target_metadata = mymodel.Base.metadata
 sys.path.append(os.getcwd())
 
-from flask_template.db.basic import metadata  # flake8: noqa
-from flask_template.db import tables  # flake8: noqa
 
 target_metadata = metadata
 

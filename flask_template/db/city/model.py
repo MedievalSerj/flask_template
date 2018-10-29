@@ -1,5 +1,5 @@
-from .table import city_table
 from ..basic import Base
+from .table import city_table
 
 
 class City(Base):

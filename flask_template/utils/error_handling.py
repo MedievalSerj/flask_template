@@ -3,7 +3,8 @@ from werkzeug.exceptions import HTTPException
 
 
 def http_error_handler(error: HTTPException):
-    return jsonify({
+    return (jsonify({
         'code': error.code,
-        'description': error.description
-    })
+        'description': error.description}),
+            error.code,
+            {})

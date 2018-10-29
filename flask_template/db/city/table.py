@@ -1,7 +1,7 @@
 import sqlalchemy as sa
-from ..basic import metadata
 from sqlalchemy.dialects.postgresql import UUID
 
+from ..basic import metadata
 
 city_table = sa.Table(
     'city',

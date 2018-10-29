@@ -6,7 +6,7 @@ isort:
 	isort -rc $(tests_dir)
 
 flake:
-	flake8 $(package) $(tests_dir)
+	flake8 --exclude $(package)/db/migrations $(package) $(tests_dir)
 	if ! isort -c -rc $(package) $(tests_dir); then \
 		echo "Import sort errors, run 'make isort' to fix"; \
 		isort --diff -rc $(package) $(tests_dir); \
@@ -14,11 +14,6 @@ flake:
 	fi
 
 test: flake
-	python -m pytest -s --quiet \
-		--cov=$(package) \
-		--cov-report=term \
-		--cov-report=html \
-		$(tests_dir)
 
 clean:
 	rm -rf `find . -name __pycache__`

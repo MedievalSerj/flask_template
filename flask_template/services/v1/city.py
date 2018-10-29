@@ -1,6 +1,8 @@
-from flask_template.db.models import City
-from ..exceptions import RecordExistsException
 from sqlalchemy.exc import IntegrityError
+
+from flask_template.db.models import City
+
+from ..exceptions import RecordExistsException
 
 
 def get_all_cities(session):

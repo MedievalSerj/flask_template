@@ -1,2 +1,2 @@
-from .table import city_table  # flake8: noqa
-from .model import City  # flake8: noqa
+from .table import city_table  # noqa: F401
+from .model import City  # noqa: F401

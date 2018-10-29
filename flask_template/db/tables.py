@@ -1,1 +1,1 @@
-from .city import city_table  # flake8: noqa
+from .city import city_table  # noqa: F401
